@@ -1,4 +1,29 @@
 <p>islf-hierarchytree works!</p>
+<pre>{{ sourcingSummary | json }}</pre>
+<pre> {{ lineItems | json }}</pre>
 <div>
-    <
+  <ejs-grid
+    #Grid
+    id="Grid"
+    [dataSource]="lineItems"
+    [childGrid]="sourcingSummary"
+    [allowSorting]="true"
+    [allowFiltering]="true"
+    [filterSettings]="filterSettings"
+  >
+    <e-columns>
+      <e-column field="sNo" headerText="S.No" width="120" textAlign="Center"></e-column>
+      <e-column field="quantity" headerText="Quantity" width="140"></e-column>
+      <e-column field="type" headerText="Type" width="170"></e-column>
+      <e-column
+        field="serviceArea"
+        headerText="Service Area"
+        width="120"
+        textAlign="Right"
+      ></e-column>
+      <e-column field="basis" headerText="Basis" width="120" textAlign="Right"></e-column>
+      <e-column field="remarks" headerText="Remarks" width="120" textAlign="Right"></e-column>
+      <e-column field="status" headerText="Status" width="120" textAlign="Right"></e-column>
+    </e-columns>
+  </ejs-grid>
 </div>
